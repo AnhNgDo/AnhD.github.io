@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import AppCard from '../components/AppCard.astro';
+import { site } from '../data/site';
+
+const apps = (await getCollection('apps')).sort((a, b) => a.data.order - b.data.order || a.data.name.localeCompare(b.data.name));
+---
+<Layout title="Apps">
+  <section class="intro" aria-labelledby="intro-heading">
+    <h1 id="intro-heading">{site.title}</h1>
+    <p>{site.description}</p>
+  </section>
+  <section aria-labelledby="apps-heading">
+    <div class="section-heading"><h2 id="apps-heading">The app collection</h2><span>Browse &amp; discover</span></div>
+    {apps.some(app => app.data.sample) && <p class="sample-notice">A preview of the collection. Sample entries below will be replaced with my apps.</p>}
+    <div class="app-grid">
+      {apps.map(app => <AppCard app={app} />)}
+    </div>
+    {apps.length === 0 && <p class="empty-state">The collection is on its way. Check back soon for my apps.</p>}
+  </section>
+</Layout>
+
