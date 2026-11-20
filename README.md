@@ -43,7 +43,7 @@ links:
 Write a brief description of your app here.
 ```
 
-Only include links that actually exist; omit unavailable fields rather than leaving empty strings. Images are optional while drafting. Image paths are relative to `public/`; do not include `public/` in the path. Use approximately 4:3 images (e.g. 1200 × 900). Cards crop images to fill that ratio. Lower `order` values appear first.
+Only include links that actually exist; omit unavailable fields rather than leaving empty strings. Images are optional while drafting. Image paths are relative to `public/`; do not include `public/` in the path. Use 1024 × 500 images, matching Google Play feature graphics. Cards show the full image within that ratio without cropping. Lower `order` values appear first.
 
 Set `sample: true` only for demonstration entries. Real entries omit it.
 

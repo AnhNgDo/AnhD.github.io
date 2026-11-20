@@ -1,8 +1,11 @@
 ---
-name: "Your app 1"
+name: "NAPLAN Year 5 Math"
 order: 1
-sample: true
+image: "images/naplan-year-5-math.png"
+imageAlt: "Year 5 Numeracy Practice — for NAPLAN and beyond, showing shape pattern and fraction questions."
+links:
+  androidBeta: "https://groups.google.com/g/closed-beta-anhd"
 ---
 
-A short introduction to your app: what it does, who it is for, and what makes it useful. Your description will appear here.
+An educational app that helps children in Years 4 and 5 build confidence in numeracy for NAPLAN and everyday problem-solving. Short, adaptive practice sessions cover arithmetic, fractions, patterns, measurement, geometry and data, with targeted revision and learning reports to help parents support progress. A colourful, child-friendly interface keeps practice engaging.
 

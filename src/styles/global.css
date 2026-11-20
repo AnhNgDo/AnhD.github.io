@@ -38,11 +38,11 @@ h1 { font-family: var(--display); font-weight: 400; font-size: clamp(3.2rem, 6.4
 .sample-notice { max-width: 70ch; color: var(--muted); font-size: .9rem; line-height: 1.6; margin-bottom: 30px; }
 .app-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 52px 36px; }
 .app-card { min-width: 0; }
-.app-image { background: #e2e9df; border-radius: 14px; overflow: hidden; aspect-ratio: 4 / 3; }
+.app-image { background: #e2e9df; border-radius: 14px; overflow: hidden; aspect-ratio: 1024 / 500; }
 .app-card:nth-child(4n + 2) .app-image { background: #eee0ce; }
 .app-card:nth-child(4n + 3) .app-image { background: #dce5ec; }
 .app-card:nth-child(4n + 4) .app-image { background: #e9dfe5; }
-.app-image img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.app-image img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .image-placeholder { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--ink); gap: 10px; }
 .image-placeholder svg { width: 72px; height: 72px; margin-bottom: 12px; }
 .image-placeholder span { font-family: var(--display); font-size: clamp(1.8rem, 3vw, 2.8rem); letter-spacing: -.02em; }
@@ -76,6 +76,7 @@ h1 { font-family: var(--display); font-weight: 400; font-size: clamp(3.2rem, 6.4
   .intro { grid-template-columns: 1fr; gap: 24px; padding: 48px 0 40px; }
   .intro p { max-width: 40ch; font-size: 1rem; }
   .app-grid { grid-template-columns: 1fr; gap: 38px; }
+  .image-placeholder svg { width: 40px; height: 40px; margin-bottom: 0; }
   .section-heading > span { font-size: .75rem; }
   .document { padding-top: 45px; }
   .site-footer { margin-top: 56px; gap: 18px; }

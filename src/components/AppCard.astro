@@ -6,13 +6,13 @@ const { app } = Astro.props;
 const { Content } = await render(app);
 const { name, image, imageAlt, links, sample } = app.data;
 const base = import.meta.env.BASE_URL;
-const labels = { ios: 'App Store', android: 'Google Play', iosBeta: 'iOS beta', androidBeta: 'Android beta' };
+const labels = { ios: 'App Store', android: 'Google Play', iosBeta: 'iOS beta', androidBeta: 'Join Android early access' };
 const availableLinks = Object.entries(links) as [keyof typeof labels, string][];
 ---
 <article class="app-card">
   <div class="app-image">
     {image ? (
-      <img src={`${base}${image.replace(/^\//, '')}`} alt={imageAlt || `Featured image for ${name}`} width="1000" height="750" loading="lazy" decoding="async" />
+      <img src={`${base}${image.replace(/^\//, '')}`} alt={imageAlt || `Featured image for ${name}`} width="1024" height="500" loading="lazy" decoding="async" />
     ) : (
       <div class="image-placeholder" aria-label={`Featured image placeholder for ${name}`}>
         <svg viewBox="0 0 80 80" fill="none" aria-hidden="true"><rect x="9" y="9" width="62" height="62" rx="15" stroke="currentColor" stroke-width="2"/><path d="M24 52L36 39L44 47L55 32M48 32H55V39" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -25,7 +25,11 @@ const availableLinks = Object.entries(links) as [keyof typeof labels, string][];
   <div class="app-description"><Content /></div>
   {availableLinks.length > 0 ? (
     <div class="store-links" aria-label={`Download ${name}`}>
-      {availableLinks.map(([key, href]) => <a href={href} aria-label={`${labels[key]} for ${name}`}>{labels[key]}<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M4 4H12V12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>)}
+      {availableLinks.map(([key, href]) => <a href={href} aria-label={`${labels[key]} for ${name}`}>
+        {key === 'androidBeta' && <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M3 2L13 12L3 22Z"/><path fill="#34A853" d="M3 2L16 9L13 12Z"/><path fill="#FBBC04" d="M16 9L21 12L16 15L13 12Z"/><path fill="#EA4335" d="M3 22L13 12L16 15Z"/></svg>}
+        {labels[key]}
+        {key !== 'androidBeta' && <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M4 4H12V12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>}
+      </a>)}
     </div>
   ) : <p class="link-placeholder">{sample ? 'Store and beta links will appear here.' : 'Download links coming soon.'}</p>}
 </article>

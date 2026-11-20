@@ -20,10 +20,10 @@ Existing App Store promotional artwork can be adapted to the website's image rat
 
 ### Image specifications
 
-- **Aspect ratio:** 4:3, matching the website's current app cards.
-- **Recommended dimensions:** 1200 x 900 pixels.
+- **Aspect ratio:** 1024:500, matching Google Play feature graphics and the website's app cards.
+- **Recommended dimensions:** 1024 x 500 pixels.
 - **Preferred format:** WebP.
-- **Safe area:** keep essential content away from the edges; cards crop images to fill the frame.
+- **Safe area:** keep essential content away from the edges; cards show the full image without cropping.
 
 ### Add an image to the website
 
